@@ -2,8 +2,6 @@ import streamlit as st
 from openai import OpenAI
 
 
-load_dotenv()
-
 st.title("Generator przypadków medycznych")
 
 
