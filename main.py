@@ -1,6 +1,4 @@
 import streamlit as st
-import os
-from dotenv import load_dotenv
 from openai import OpenAI
 
 
@@ -20,7 +18,7 @@ def generate_response(prompt_template, **kwargs):
     Returns:
         str: The generated response from the OpenAI API.
     """
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
     client = OpenAI(api_key=OPENAI_API_KEY)
 
     prompt = prompt_template.format(**kwargs)
